@@ -10,6 +10,8 @@ import PacientePage from './pages/PacientePage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/NavBar';
 import { UsuarioPage } from './pages/UsuarioPage';
+import EsqueciSenhaPage from './pages/EsqueciSenhaPage';
+import RedefinirSenhaPage from './pages/RedefinirSenhaPage';
 
 
 // Componente para Redirecionamento baseado na Role
@@ -34,8 +36,10 @@ const App: React.FC = () => {
             <Navbar /> {/* Componente de navegação */}
             
             <Routes>
+                <Route path="/redefinirminhasenha" element={<RedefinirSenhaPage />} />
+                <Route path="/esqueciminhasenha" element={<EsqueciSenhaPage />} />
                 <Route path="/login" element={<LoginPage />} />
-
+                    
                       <Route path="/cadastropaciente" element={<UsuarioPage />} />  
                 {/* Rotas Protegidas (Reutilizando seu ProtectedRoute já refatorado) */}
                 <Route element={<ProtectedRoute allowedRoles={['ROLE_ATENDENTE']} />}>
